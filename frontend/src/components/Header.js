@@ -11,7 +11,7 @@ import Button from '@mui/material/Button';
 import MenuItem from '@mui/material/MenuItem';
 
 import logo from '../logo.svg';
-import CartIcon from '../components/cart/CartIcon';
+// import CartIcon from '../components/cart/CartIcon';
 
 const pages = ['web', 'climb', 'about', 'store', 'thoughts'];
 // const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
@@ -150,7 +150,7 @@ const Header = () => {
           ))}
         </Menu>
       </Box>
-      <Box sx={{ width: '33%', display: 'flex', justifyContent: 'center'}}>
+      <Box sx={{ width: '33%', display: {xs: 'none', sm:'none', md: 'flex'}, justifyContent: 'center'}}>
         <Link to={'/'} style={{ color: 'black', textDecoration: 'none' }}>
         {
           logo ? (
@@ -169,9 +169,28 @@ const Header = () => {
         }
         </Link>
       </Box>
-      <Box sx={{ width: '33%', display: 'flex', flexDirection: 'row-reverse', marginRight: '1rem'}}>
-        <CartIcon />
+      <Box sx={{ width: '66%', display: {xs: 'flex', sm:'flex', md: 'none'}, justifyContent: 'left'}}>
+        <Link to={'/'} style={{ color: 'black', textDecoration: 'none' }}>
+        {
+          logo ? (
+            // <img
+            //   src={logo}
+            //   alt={"logo"}
+            //   style={{
+            //     width: 50,
+            //     height: 50,
+            //   }}
+            // />
+            <h1>Sergio Falcon</h1>
+          ) : (
+            <Skeleton variant="rectangular" width={50} height={50} />
+          )
+        }
+        </Link>
       </Box>
+      {/* <Box sx={{ width: '33%', display: 'flex', flexDirection: 'row-reverse', marginRight: '1rem'}}>
+        <CartIcon />
+      </Box> */}
     </Box>
   );
 };
