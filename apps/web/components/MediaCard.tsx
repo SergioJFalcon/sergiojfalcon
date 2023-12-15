@@ -9,7 +9,7 @@ import Typography from '@mui/material/Typography';
 export default function MediaCard({ heading, text }: { heading: string; text: string }) {
   return (
     <Card>
-      <Image
+      {/* <Image
         alt="Random image"
         src="https://source.unsplash.com/random"
         width={640}
@@ -19,7 +19,7 @@ export default function MediaCard({ heading, text }: { heading: string; text: st
           height: '200px',
           objectFit: 'cover',
         }}
-      />
+      /> */}
       <CardContent>
         <Typography gutterBottom variant="h5" component="div">
           {heading}
