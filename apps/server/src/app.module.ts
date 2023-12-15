@@ -8,6 +8,10 @@ import { ProductModule } from './product/product.module';
 import { UserModule } from './user/user.module';
 import { AuthModule } from './auth/auth.module';
 import { ConfigModule } from '@nestjs/config';
+import { ProjectController } from './project/project.controller';
+import { ProjectModule } from './project/project.module';
+import { TechController } from './tech/tech.controller';
+import { TechModule } from './tech/tech.module';
 
 @Module({
   imports: [
@@ -21,8 +25,15 @@ import { ConfigModule } from '@nestjs/config';
     TrpcModule,
     UserModule,
     AuthModule,
+    ProjectModule,
+    TechModule,
   ],
-  controllers: [AppController, ProductController],
+  controllers: [
+    AppController,
+    ProductController,
+    ProjectController,
+    TechController,
+  ],
   providers: [AppService],
 })
 export class AppModule {}

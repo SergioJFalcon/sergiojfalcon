@@ -4,7 +4,8 @@ import { UserService } from '@server/user/user.service';
 import { CreateUserDTO } from '@server/user/dtos/create-user-dto';
 import { LoginDTO } from './dto/login-dto';
 import { RefreshJwtGuard } from './guards/refresh.guard';
-
+import { ApiTags } from '@nestjs/swagger';
+@ApiTags('auth')
 @Controller('auth')
 export class AuthController {
   constructor(

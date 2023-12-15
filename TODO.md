@@ -1,5 +1,6 @@
 # TODO List
-## Frontend - NextJS
+## Frontend - NextJS 
+  ### Material UI - https://mui.com/material-ui/react-button/
   ### background image in ThreeJS
   #### Check out - https://summer-afternoon.vlucendo.com/
   - Forest that changes with the seasons
@@ -18,7 +19,8 @@
   ### Contact form
   ### About me page
   - Create
-## Backend - NestJS
+## Backend - NestJS - https://docs.nestjs.com/first-steps
+## MongoDB - https://cloud.mongodb.com/
 ## Use tRPC to create end-to-end typesafe APIs
 ### tutorial for creating this techstack - https://www.tomray.dev/nestjs-nextjs-trpc
 ## Containerize app using Docker to simplify deployments

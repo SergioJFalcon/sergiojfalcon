@@ -15,7 +15,7 @@ import { CreateProductDTO } from './dtos/create-product.dto';
 import { FilterProductDTO } from './dtos/filter-product.dto';
 import { Types } from 'mongoose';
 
-@Controller('store/products')
+@Controller('api/products')
 export class ProductController {
   constructor(private readonly productService: ProductService) {}
 
