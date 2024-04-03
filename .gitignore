@@ -1,6 +1,6 @@
 node_modules
 dist
-build
 .env
-./apps/server/.env
-./apps/web/.env
+./env
+/old
+TODO

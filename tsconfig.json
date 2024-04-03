@@ -1,18 +1,45 @@
 {
   "compilerOptions": {
-    "baseUrl": ".",
-    "experimentalDecorators": true,
-    "emitDecoratorMetadata": true,
-    "incremental": true,
-    "skipLibCheck": true,
-    "strictNullChecks": true,
-    "noImplicitAny": true,
-    "strictBindCallApply": true,
-    "forceConsistentCasingInFileNames": true,
-    "noFallthroughCasesInSwitch": true,
-    "paths": {
-      "@server/*": ["./apps/server/src/*"],
-      "@web/*": ["./apps/web/*"]
-    }
-  }
+      "baseUrl": ".",
+      // "strict": true,
+      "target": "ESNext",
+      "module": "ESNext",
+      "moduleResolution": "node",
+      "allowSyntheticDefaultImports": true,
+      "esModuleInterop": true,
+      "jsx": "preserve",
+      "jsxImportSource": "solid-js",
+      "types": ["vite/client"],
+      "useDefineForClassFields": true,
+      "noImplicitAny": false,
+      "isolatedModules": true,
+      "noEmit": true,
+      "lib": ["DOM", "DOM.Iterable", "ESNext"],
+      "allowJs": true,
+      "skipLibCheck": false,
+      "forceConsistentCasingInFileNames": true,
+      "resolveJsonModule": true,
+      "paths": {
+          "@interfaces/*": ["src/interfaces/*"],
+          "@components/*": ["src/components/*"],
+          "@routes/*": ["src/routes/*"],
+          "@pages/*": ["src/pages/*"],
+          "@styles/*": ["src/styles/*"],
+          "@config/*": ["src/config/*"],
+          "@src/*": ["src/*"],
+          "@assets/*": ["src/assets/*"],
+          "@hooks/*": ["src/utils/hooks/*"],
+          "@screens/*": ["src/screens/*"],
+          "@store/*": ["src/store/*"],
+          "@static/*": ["src/static/*"],
+          "@utils/*": ["src/utils/*"]
+      }
+  },
+  "include": ["src", "**/*.ts", "**/*.tsx", "index.js", "src/assets/**/*", "src/.d.ts", "**/*.glb", "**/*.gltf", "**/*.png", "**/*.jpg", "**/*.jpeg", "**/*.svg", "**/*.webp", "**/*.ico", "**/*.json", "**/*.mp4", "**/*.webm", "**/*.ogg", "**/*.mp3", "**/*.wav", "**/*.flac", "**/*.aac", "**/*.m4a", "**/*.flv", "**/*.mov", "**/*.avi", "**/*.wmv", "**/*.mkv", "**/*.m3u8", "**/*.ts", "**/*.pdf", "**/*.doc", "**/*.docx", "**/*.xls", "**/*.xlsx", "**/*.ppt", "**/*.pptx", "**/*.txt", "**/*.rtf", "**/*.csv", "**/*.xml", "**/*.yaml", "**/*.yml", "**/*.zip", "**/*.rar", "**/*.7z", "**/*.tar", "**/*.gz", "**/*.bz2", "**/*.xz", "**/*.exe", "**/*.msi", "**/*.dmg", "**/*.pkg", "**/*.deb", "**/*.rpm", "**/*.apk", "**/*.ipa", "**/*.app", "**/*.iso", "**/*.img", "**/*.bin", "**/*.cue", "**/*.md", "**/*.markdown", "**/*.html", "**/*.htm", "**/*.css", "**/*.scss", "**/*.sass", "**/*.less", "**/*.styl", "**/*.stylus", "**/*.js", "**/*.jsx", "**/*.ts", "**/*.tsx", "**/*.vue", "**/*.svelte", "**/*.solid", "**/*.mdx", "**/*.graphql", "**/*.gql", "**/*.yml", "**/*.yaml", "**/*.toml", "**/*.ini", "**/*.conf", "**/*.cfg", "**/*.config", "**/*.env", "**/*.env.local", "**/*.env.development", "**/*.env.production", "**/*.gltf"],
+  "references": [
+      {
+          "path": "./tsconfig.node.json"
+      }
+  ],
+  "exclude": ["node_modules"]
 }

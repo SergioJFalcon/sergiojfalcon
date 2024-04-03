@@ -21,6 +21,6 @@
   - Create
 ## Backend - NestJS - https://docs.nestjs.com/first-steps
 ## MongoDB - https://cloud.mongodb.com/
-## Use tRPC to create end-to-end typesafe APIs
-### tutorial for creating this techstack - https://www.tomray.dev/nestjs-nextjs-trpc
 ## Containerize app using Docker to simplify deployments
+
+https://www.tomray.dev/nestjs-nextjs-trpc
