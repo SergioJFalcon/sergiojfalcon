@@ -1,0 +1,113 @@
+{
+  "jobs": [],
+  "projects": [
+    {
+      "name": "GRC Platform Tool ",
+      "description": "GRC platform tool that will streamline an organization's compliance journey by digitizing compliance artifacts into a digital system of record, automating existing security and compliance tools to keep compliance documentation continuously up to date, transform existing records to output to both human and machine-readable formats, and lastly scale any environment with tenants for every business unit with enterprise reporting across the organization in your Business Intelligence platform of choice.",
+      "job": {
+        "title": "Full Stack Developer",
+        "description": "Developed on the main GRC tool, specifically on a variety of features such as Policy Template Editor, Job scheduler using airflow, and ensuring Web Accessibility coverage. Worked on the front-end using Angular and back-end using .NET and Python.",
+        "start": "2022-11-11",
+        "end": "2023-11-12"
+      },
+      "company": "RegScale",
+      "logo": "",
+      "initials": "RS",
+      "techstack": [
+        "Angular",
+        ".NET Core",
+        "Python",
+        "MySQL",
+        "TypeScript",
+        "Docker",
+        "Azure",
+        "HTML5",
+        "CSS",
+        "Kendo UI",
+        "SyncFusion"
+      ],
+      "links": [
+        {
+          "name": "RegScale",
+          "url": "https://www.regscale.com"
+        },
+        {
+          "name": "Demo",
+          "url": "https://dev.regscale.io/login"
+        }
+      ],
+      "images": [
+        {
+          "name": "RegScale Home Page",
+          "url": "/images/regscale/regscale_img.png"
+        }
+      ]
+    },
+    {
+      "name": "GovReady",
+      "description": "GRC Tool",
+      "job": {
+        "title": "Full Stack Developer",
+        "description": "Worked on the front-end using React and back-end Django and Python.",
+        "start": "2021-09-03",
+        "end": "2022-11-11"
+      },
+      "logo": "",
+      "initials": "GR",
+      "company": "RegScale",
+      "techstack": [
+        "React",
+        "Django",
+        "Python",
+        "Docker",
+        "PostgreSQL"
+      ],
+      "links": [
+        {
+          "name": "GovReady",
+          "url": "https://govready.com/"
+        }
+      ],
+      "images": [
+        {
+          "name": "GovReady",
+          "url": ""
+        }
+      ]
+    },
+    {
+      "name": "Climbalytics",
+      "description": "Climbing app that utilizes a bluetooth device to track a user's climbing session.",
+      "job": {
+        "title": "Software Developer",
+        "description": "Worked on the climbalytics app using React Native and the marketing site using React.",
+        "start": "2021-09-03",
+        "end": "2022-11-11"
+      },
+      "logo": "",
+      "initials": "CA",
+      "company": "Climbalytics",
+      "techstack": [
+        "React",
+        "React Native",
+        "Docker",
+        "PostgreSQL"
+      ],
+      "links": [],
+      "images": [
+        {
+          "name": "Dashboard",
+          "url": "/images/climbalytics/dashboard.jpeg"
+        },
+        {
+          "name": "Recent Sessions",
+          "url": "/images/climbalytics/recent_sessions.png"
+        },
+        {
+          "name": "Calendar",
+          "url": "/images/climbalytics/calendar.png"
+        }
+      ]
+    }
+  ]
+}
