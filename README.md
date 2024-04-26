@@ -3,7 +3,7 @@
 
 - 🔭 I’m currently working on [Solid Nest Stack Template](https://github.com/SergioJFalcon/solid-template)
 
-- 🌱 I’m currently learning **SolidJS and NestJS**
+- 🌱 I’m currently learning **SolidJS,NestJS and a side hobby of Rust**
 
 - 👨‍💻 All of my projects are available at [github.com/sergiojfalcon](github.com/sergiojfalcon)
 
