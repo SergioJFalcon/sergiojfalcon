@@ -1,9 +1,8 @@
-import type { Component } from "solid-js"
+import { Image as ImagePrimitive } from "@kobalte/core"
 import { splitProps } from "solid-js"
 
-import { Image as ImagePrimitive } from "@kobalte/core"
-
 import { cn } from "../../lib/utils"
+import type { Component } from "solid-js"
 
 const Avatar: Component<ImagePrimitive.ImageRootProps> = (props) => {
   const [, rest] = splitProps(props, ["class"])

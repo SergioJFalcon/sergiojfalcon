@@ -1,9 +1,6 @@
 import { A } from '@solidjs/router';
 import { BriefcaseBusiness, Mountain } from 'lucide-solid';
-import { OrbitControls, Html } from 'solid-drei';
 import { For } from "solid-js";
-// import { createControls } from 'solid-leva';
-import { Canvas, createSignal, onMount, useThree } from 'solid-three'
 import type { Component } from 'solid-js'
 import resume from '@assets/Sergio_Falcon_Resume_v5.pdf';
 import ClimbalyticsLogo from '@assets/images/climbalytics/climbalyticsIcon.png';
