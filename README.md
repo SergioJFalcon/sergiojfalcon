@@ -1,17 +1,17 @@
 <h1 align="center">Hi 👋, I'm Sergio Falcon</h1>
 <h3 align="center">A passionate rock climber and full stack developer from Austin, TX</h3>
 
-- 🔭 I’m currently working on [Solid Nest Stack Template](https://github.com/SergioJFalcon/solid-template)
+- 🔭 I’m currently working on secret projects
 
-- 🌱 I’m currently learning **SolidJS,NestJS and a side hobby of Rust**
+- 🌱 I’m currently learning **Svelte & Rust**
 
 - 👨‍💻 All of my projects are available at [github.com/sergiojfalcon](github.com/sergiojfalcon)
 
-- 💬 Ask me about **react, angular, django**
+- 💬 Ask me about **svelte, fastapi, vue, .NET**
 
 - 📫 How to reach me **sergiojfalcon@gmail.com**
 
-- ⚡ Fun fact **I've been rock climbing for 10 years.**
+- ⚡ Fun fact **I've been rock climbing for 11 years.**
 
 <h3 align="left">Connect with me:</h3>
 <p align="left">
