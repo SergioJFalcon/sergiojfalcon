@@ -1,45 +1,19 @@
 {
-  "compilerOptions": {
-      "baseUrl": ".",
-      // "strict": true,
-      "target": "ESNext",
-      "module": "ESNext",
-      "moduleResolution": "node",
-      "allowSyntheticDefaultImports": true,
-      "esModuleInterop": true,
-      "jsx": "preserve",
-      "jsxImportSource": "solid-js",
-      "types": ["vite/client"],
-      "useDefineForClassFields": true,
-      "noImplicitAny": false,
-      "isolatedModules": true,
-      "noEmit": true,
-      "lib": ["DOM", "DOM.Iterable", "ESNext"],
-      "allowJs": true,
-      "skipLibCheck": false,
-      "forceConsistentCasingInFileNames": true,
-      "resolveJsonModule": true,
-      "paths": {
-          "@interfaces/*": ["src/interfaces/*"],
-          "@components/*": ["src/components/*"],
-          "@routes/*": ["src/routes/*"],
-          "@pages/*": ["src/pages/*"],
-          "@styles/*": ["src/styles/*"],
-          "@config/*": ["src/config/*"],
-          "@src/*": ["src/*"],
-          "@assets/*": ["src/assets/*"],
-          "@hooks/*": ["src/utils/hooks/*"],
-          "@screens/*": ["src/screens/*"],
-          "@store/*": ["src/store/*"],
-          "@static/*": ["src/static/*"],
-          "@utils/*": ["src/utils/*"]
-      }
-  },
-  "include": ["src", "**/*.ts", "**/*.tsx", "index.js", "src/assets/**/*", "src/.d.ts", "**/*.glb", "**/*.gltf", "**/*.png", "**/*.jpg", "**/*.jpeg", "**/*.svg", "**/*.webp", "**/*.ico", "**/*.json", "**/*.mp4", "**/*.webm", "**/*.ogg", "**/*.mp3", "**/*.wav", "**/*.flac", "**/*.aac", "**/*.m4a", "**/*.flv", "**/*.mov", "**/*.avi", "**/*.wmv", "**/*.mkv", "**/*.m3u8", "**/*.ts", "**/*.pdf", "**/*.doc", "**/*.docx", "**/*.xls", "**/*.xlsx", "**/*.ppt", "**/*.pptx", "**/*.txt", "**/*.rtf", "**/*.csv", "**/*.xml", "**/*.yaml", "**/*.yml", "**/*.zip", "**/*.rar", "**/*.7z", "**/*.tar", "**/*.gz", "**/*.bz2", "**/*.xz", "**/*.exe", "**/*.msi", "**/*.dmg", "**/*.pkg", "**/*.deb", "**/*.rpm", "**/*.apk", "**/*.ipa", "**/*.app", "**/*.iso", "**/*.img", "**/*.bin", "**/*.cue", "**/*.md", "**/*.markdown", "**/*.html", "**/*.htm", "**/*.css", "**/*.scss", "**/*.sass", "**/*.less", "**/*.styl", "**/*.stylus", "**/*.js", "**/*.jsx", "**/*.ts", "**/*.tsx", "**/*.vue", "**/*.svelte", "**/*.solid", "**/*.mdx", "**/*.graphql", "**/*.gql", "**/*.yml", "**/*.yaml", "**/*.toml", "**/*.ini", "**/*.conf", "**/*.cfg", "**/*.config", "**/*.env", "**/*.env.local", "**/*.env.development", "**/*.env.production", "**/*.gltf"],
-  "references": [
-      {
-          "path": "./tsconfig.node.json"
-      }
-  ],
-  "exclude": ["node_modules"]
+	"extends": "./.svelte-kit/tsconfig.json",
+	"compilerOptions": {
+		"allowJs": true,
+		"checkJs": true,
+		"esModuleInterop": true,
+		"forceConsistentCasingInFileNames": true,
+		"resolveJsonModule": true,
+		"skipLibCheck": true,
+		"sourceMap": true,
+		"strict": true,
+		"moduleResolution": "bundler"
+	}
+	// Path aliases are handled by https://svelte.dev/docs/kit/configuration#alias
+	// except $lib which is handled by https://svelte.dev/docs/kit/configuration#files
+	//
+	// If you want to overwrite includes/excludes, make sure to copy over the relevant includes/excludes
+	// from the referenced tsconfig.json - TypeScript does not merge them in
 }
