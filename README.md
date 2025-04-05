@@ -1,11 +1,12 @@
 *"When in doubt, campus it out" - Sergio*
 
 ## About me
+
 ```typescript
   const Sergio {
-    role: "Systems Engineering",
+    role: "Software Developer",
     focus: "Full Stack Development",
-    passion: "learning new tech and making fun projects with it",
+    passion: "Learning new tech and making fun projects with it",
     hobbies: ["rock climbing", "coding", "reading"]
   }
 ```
@@ -47,19 +48,19 @@
 ### 📊 Weekly development breakdown ![GitHub last commit](https://img.shields.io/github/last-commit/sergiojfalcon/sergiojfalcon)
 
 ```txt
-Total Commits: 8 | Total Files Changed: 33
+Total Commits: 7 | Total Files Changed: 35
 ┌────────────┬──────────┬────────┐
 │   language │ Commit % │ File % │
 ├────────────┼──────────┼────────┤
-│         C# │ 25.00%   │ 36.36% │
+│         C# │ 14.29%   │ 28.57% │
 ├────────────┼──────────┼────────┤
-│ TypeScript │ 12.50%   │ 21.21% │
+│       HTML │ 14.29%   │ 2.86%  │
 ├────────────┼──────────┼────────┤
-│     Vue.js │ 12.50%   │ 15.15% │
+│     Vue.js │ 14.29%   │ 14.29% │
 ├────────────┼──────────┼────────┤
-│       HTML │ 12.50%   │ 3.03%  │
+│ TypeScript │ 14.29%   │ 20.00% │
 ├────────────┼──────────┼────────┤
-│      Other │ 37.50%   │ 24.24% │
+│      Other │ 42.86%   │ 34.29% │
 └────────────┴──────────┴────────┘
 ```
 
@@ -69,6 +70,4 @@ Total Commits: 8 | Total Files Changed: 33
     <a href="https://www.youtube.com/@powersergio" target="blank"><img align="center" src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/youtube.svg" alt="sergiojfalcon" height="30" width="40" /></a>
     <a href="https://instagram.com/sergiojfalcon" target="blank"><img align="center" src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/instagram.svg" alt="sergiojfalcon" height="30" width="40" /></a>
     <a href="https://linkedin.com/in/sergiojfalcon" target="blank"><img align="center" src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/linked-in-alt.svg" alt="sergiojfalcon" height="30" width="40" /></a>
-    <a href="https://fb.com/sergiojfalcon" target="blank"><img align="center" src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/facebook.svg" alt="sergiojfalcon" height="30" width="40" /></a>
-    <a href="https://twitter.com/sergiojfalcon" target="blank"><img align="center" src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/twitter.svg" alt="sergiojfalcon" height="30" width="40" /></a>
 </p>
