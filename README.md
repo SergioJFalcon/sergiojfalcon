@@ -48,17 +48,19 @@
 ### 📊 Weekly development breakdown ![GitHub last commit](https://img.shields.io/github/last-commit/sergiojfalcon/sergiojfalcon)
 
 ```txt
-Total Commits: 6 | Total Files Changed: 11
+Total Commits: 6 | Total Files Changed: 17
 ┌────────────┬──────────┬────────┐
 │   language │ Commit % │ File % │
 ├────────────┼──────────┼────────┤
-│     Svelte │ 16.67%   │ 27.27% │
+│ TypeScript │ 33.33%   │ 41.18% │
 ├────────────┼──────────┼────────┤
-│ TypeScript │ 16.67%   │ 9.09%  │
+│         C# │ 16.67%   │ 11.76% │
 ├────────────┼──────────┼────────┤
-│       Rust │ 16.67%   │ 36.36% │
+│     Vue.js │ 16.67%   │ 29.41% │
 ├────────────┼──────────┼────────┤
-│      Other │ 50.00%   │ 27.27% │
+│     Svelte │ 16.67%   │ 11.76% │
+├────────────┼──────────┼────────┤
+│      Other │ 16.67%   │ 5.88%  │
 └────────────┴──────────┴────────┘
 ```
 
