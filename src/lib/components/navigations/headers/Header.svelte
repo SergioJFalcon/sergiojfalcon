@@ -1,82 +1,39 @@
 <script lang="ts">
-	import { resolve } from '$app/paths';
-	import { page } from '$app/state';
+  import { resolve } from '$app/paths';
+  import { page } from '$app/state';
+
+  const links = [
+    { href: '/', label: 'home' },
+    { href: '/about', label: 'about' },
+    { href: '/projects', label: 'projects' }
+  ] as const;
+
+  const isActive = (path: string) => page.url.pathname === path;
 </script>
 
-<header class="">
-	<nav class="w-full">
-		<ul class="w-full">
-			<li aria-current={page.url.pathname === '/' ? 'page' : undefined}>
-				<a href={resolve('/')}>Home</a>
-			</li>
-			<li aria-current={page.url.pathname === '/about' ? 'page' : undefined}>
-				<a href={resolve('/about')}>About</a>
-			</li>
-      <li aria-current={page.url.pathname === '/projects' ? 'page' : undefined}>
-        <a href={resolve('/projects')}>Projects</a>
+<nav
+  class="font-term sticky top-0 z-1000 border-b border-(--term-border) bg-[rgba(7,11,9,0.72)] backdrop-blur-md"
+>
+  <ul class="mx-auto flex max-w-4xl items-center gap-1 p-3 text-sm sm:gap-3">
+    <li class="mr-2 hidden text-(--term-muted) select-none sm:block">
+      <span class="text-(--term-green)">~/sergio</span><span class="cursor"></span>
+    </li>
+    {#each links as link (link.href)}
+      {@const active = isActive(link.href)}
+      <li>
+        <a
+          href={resolve(link.href)}
+          aria-current={active ? 'page' : undefined}
+          class="group relative px-2 py-1 tracking-wide transition-colors duration-150
+            {active ? 'text-(--term-green) glow-green' : 'text-(--term-muted) hover:text-(--term-text)'}"
+        >
+          <span class="text-(--term-green-dim) opacity-70">{active ? './' : ''}</span>{link.label}
+          <span
+            class="absolute -bottom-px left-0 h-px w-full origin-left bg-(--term-green) transition-transform duration-200
+              {active ? 'scale-x-100' : 'scale-x-0 group-hover:scale-x-100'}"
+          ></span>
+        </a>
       </li>
-			<!-- <li aria-current={page.url.pathname.startsWith('/sverdle') ? 'page' : undefined}>
-				<a href={resolve('/sverdle')}>Sverdle</a>
-			</li> -->
-		</ul>
-	</nav>
-</header>
-
-<style>
-	header {
-		display: flex;
-		justify-content: space-between;
-    width: 100%;
-	}
-
-	nav {
-		display: flex;
-		justify-content: center;
-	}
-
-	ul {
-		position: relative;
-		padding: 0;
-		margin: 0;
-		height: 3em;
-		display: flex;
-		justify-content: center;
-		align-items: center;
-		list-style: none;
-	}
-
-	li {
-		position: relative;
-		height: 100%;
-	}
-
-	li[aria-current='page']::before {
-		--size: 6px;
-		content: '';
-		width: 0;
-		height: 0;
-		position: absolute;
-		top: 0;
-		left: calc(50% - var(--size));
-		border: var(--size) solid transparent;
-		border-top: var(--size) solid var(--color-theme-1);
-	}
-
-	nav a {
-		display: flex;
-		height: 100%;
-		align-items: center;
-		padding: 0 0.5rem;
-		color: var(--color-text);
-		font-weight: 700;
-		font-size: 0.8rem;
-		text-transform: uppercase;
-		letter-spacing: 0.1em;
-		text-decoration: none;
-		transition: color 0.2s linear;
-	}
-
-	a:hover {
-		color: var(--color-theme-1);
-	}
-</style>
+    {/each}
+  </ul>
+</nav>
