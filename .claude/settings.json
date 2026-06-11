@@ -1,0 +1,12 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(node -e \"const fs=require\\('fs'\\); const d='node_modules/@lucide/svelte/dist/icons'; const f=fs.readdirSync\\(d\\).filter\\(x=>x.endsWith\\('.svelte'\\)\\).map\\(x=>x.replace\\('.svelte',''\\)\\); const want=['git','hub','linke','tube','twitch','insta','twit','face','book','video','music']; want.forEach\\(w=>{const hits=f.filter\\(n=>n.includes\\(w\\)\\); if\\(hits.length\\) console.log\\(w,'=>',hits.slice\\(0,8\\).join\\(', '\\)\\)}\\)\")",
+      "Bash(pnpm add *)",
+      "Bash(node -e \"const fs=require\\('fs'\\); const d='node_modules/@icons-pack/svelte-simple-icons/icons'; const f=fs.readdirSync\\(d\\).filter\\(x=>x.endsWith\\('.svelte'\\)\\).map\\(x=>x.replace\\('.svelte',''\\)\\); ['Github','Linkedin','Youtube','Twitch','Instagram','X','Facebook','Twitter'].forEach\\(w=>{const hits=f.filter\\(n=>n.toLowerCase\\(\\)===\\('si'+w\\).toLowerCase\\(\\)||n.toLowerCase\\(\\).includes\\(w.toLowerCase\\(\\)\\)\\); console.log\\(w,'=>',hits.slice\\(0,5\\).join\\(', '\\)||'NONE'\\)}\\)\")",
+      "Bash(node -e \"const fs=require\\('fs'\\); const d='node_modules/@icons-pack/svelte-simple-icons/icons'; const f=fs.readdirSync\\(d\\).filter\\(x=>x.endsWith\\('.svelte'\\)\\).map\\(x=>x.replace\\('.svelte',''\\)\\); console.log\\('linkedin:', f.filter\\(n=>n.toLowerCase\\(\\).startsWith\\('silinked'\\)\\).join\\(', '\\)\\); console.log\\('X exact:', f.includes\\('SiX'\\)\\); console.log\\('github exact:', f.includes\\('SiGithub'\\)\\)\")",
+      "Bash(node -e \"const fs=require\\('fs'\\); const d='node_modules/@icons-pack/svelte-simple-icons/icons'; const f=fs.readdirSync\\(d\\).filter\\(x=>x.endsWith\\('.svelte'\\)\\).map\\(x=>x.replace\\('.svelte',''\\)\\); console.log\\('contains link:', f.filter\\(n=>n.toLowerCase\\(\\).includes\\('link'\\)\\).slice\\(0,15\\).join\\(', '\\)\\)\")",
+      "Bash(pnpm run *)"
+    ]
+  }
+}

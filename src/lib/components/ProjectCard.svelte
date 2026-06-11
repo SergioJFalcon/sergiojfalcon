@@ -19,35 +19,50 @@
   let { project }: { project: Project } = $props();
 </script>
 
-<div>
-  <Card.Root>
-    <Card.Header class="flex flex-row text-xl">
-      <Avatar.Root class="mr-4 h-12 w-12">
+<div class="group h-full">
+  <Card.Root
+    class="h-full gap-4 border-(--term-border) bg-[rgba(11,17,14,0.72)] backdrop-blur-md transition-all duration-200 group-hover:border-(--term-green-dim) group-hover:shadow-[0_0_26px_rgba(77,255,160,0.14)]"
+  >
+    <Card.Header class="flex flex-row items-center gap-3">
+      <Avatar.Root class="h-11 w-11 rounded border border-(--term-border)">
         <Avatar.Image src={project.logo} alt={project.name} />
         <Avatar.Fallback>{project.initials}</Avatar.Fallback>
       </Avatar.Root>
-      <div>{project.name}</div>
-    </Card.Header>
-    <Card.Content class="grid grid-cols-1">
-      <div class="col-span-1">
-        {project.description}
+      <div class="font-term text-lg font-semibold text-(--term-green)">
+        <span class="text-(--term-muted)">~/</span>{project.name.trim()}
       </div>
+    </Card.Header>
+    <Card.Content>
+      <p class="text-sm leading-relaxed text-(--term-text)/85">
+        {project.description}
+      </p>
     </Card.Content>
-    <Card.Footer class="grid grid-cols-1">
+    <Card.Footer class="mt-auto flex flex-col items-start gap-3">
       {#if project.techstack.length > 0}
-        <span class="text-lg">TechStack</span>
-        <div class="col-span-1 px-4">
-          {#each project.techstack as tech (tech)}
-            <Badge variant="outline" class="mr-1 mb-1">{tech}</Badge>
-          {/each}
+        <div class="w-full">
+          <span class="term-rule mb-2 w-full text-(--term-amber)">// techstack</span>
+          <div class="flex flex-wrap gap-1.5">
+            {#each project.techstack as tech (tech)}
+              <span class="term-tag">{tech}</span>
+            {/each}
+          </div>
         </div>
       {/if}
       {#if project.links.length > 0}
-        <div class="col-span-1 pt-4">
-          <span class="flex text-lg"><LinkIcon class="mr-2" />Links</span>
-          <div class="px-4">
+        <div class="w-full">
+          <span class="term-rule mb-2 flex w-full items-center gap-1 text-(--term-green)">
+            <LinkIcon class="h-3 w-3" />links
+          </span>
+          <div class="flex flex-wrap gap-x-4 font-term text-sm">
             {#each project.links as link (link.url)}
-              <a href={link.url} class="flex">{link.name}</a>
+              <a
+                href={link.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                class="text-(--term-green) hover:glow-green"
+              >
+                <span class="text-(--term-muted)">&gt;</span> {link.name}
+              </a>
             {/each}
           </div>
         </div>

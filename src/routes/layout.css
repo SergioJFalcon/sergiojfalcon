@@ -10,21 +10,34 @@
 
 :root {
 	--font-body:
-		Arial, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell,
-		'Open Sans', 'Helvetica Neue', sans-serif;
-	--font-mono: 'Fira Mono', monospace;
-	--color-bg-0: rgb(202, 216, 228);
-	--color-bg-1: hsl(209, 36%, 86%);
-	--color-bg-2: hsl(224, 44%, 95%);
-	--color-theme-1: #ff3e00;
-	--color-theme-2: #4075a6;
-	--color-text: rgba(0, 0, 0, 0.7);
+		'Geist Variable', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu,
+		Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+	--font-mono: 'Fira Mono', ui-monospace, SFMono-Regular, monospace;
+
+	/* ===== Hacker / Climber palette ===== */
+	--term-bg: #070b09; /* deep cave black */
+	--term-bg-soft: #0b110e;
+	--term-surface: #0e1512; /* panel fill */
+	--term-border: #1c2e25; /* green-tinted hairline */
+	--term-green: #4dffa0; /* phosphor / belay glow */
+	--term-green-dim: #2bbd6e;
+	--term-amber: #ff8c42; /* sunset on sandstone */
+	--term-amber-dim: #c96a2e;
+	--term-text: #cde8d6; /* soft phosphor white */
+	--term-muted: #708a7c;
+
+	--color-bg-0: var(--term-bg);
+	--color-bg-1: var(--term-bg-soft);
+	--color-bg-2: var(--term-surface);
+	--color-theme-1: var(--term-green);
+	--color-theme-2: var(--term-amber);
+	--color-text: var(--term-text);
 	--column-width: 42rem;
 	--column-margin-top: 4rem;
 	font-family: var(--font-body);
 	color: var(--color-text);
 	--background:
-		oklch(1 0 0);
+		oklch(40.457% 0.00401 16.691);
 	--foreground:
 		oklch(0.145 0 0);
 	--card:
@@ -92,12 +105,24 @@
 body {
 	min-height: 100vh;
 	margin: 0;
+	background-color: var(--term-bg);
 	background-attachment: fixed;
-	background-color: var(--color-bg-1);
-	background-size: 100vw 100vh;
+	color: var(--term-text);
+	/* Topographic / circuit grid: fine grid + contour rings + vignette */
 	background-image:
-		radial-gradient(50% 50% at 50% 50%, rgba(255, 255, 255, 0.75) 0%, rgba(255, 255, 255, 0) 100%),
-		linear-gradient(180deg, var(--color-bg-0) 0%, var(--color-bg-1) 15%, var(--color-bg-2) 50%);
+		linear-gradient(rgba(77, 255, 160, 0.035) 1px, transparent 1px),
+		linear-gradient(90deg, rgba(77, 255, 160, 0.035) 1px, transparent 1px),
+		radial-gradient(
+			120% 80% at 50% -10%,
+			rgba(255, 140, 66, 0.08) 0%,
+			transparent 45%
+		),
+		radial-gradient(100% 100% at 50% 50%, transparent 60%, rgba(0, 0, 0, 0.55) 100%);
+	background-size:
+		34px 34px,
+		34px 34px,
+		100% 100%,
+		100% 100%;
 }
 
 h1,
@@ -107,16 +132,19 @@ p {
 }
 
 p {
-	line-height: 1.5;
+	line-height: 1.6;
 }
 
 a {
-	color: var(--color-theme-1);
+	color: var(--term-green);
 	text-decoration: none;
+	transition: color 0.15s ease, text-shadow 0.15s ease;
 }
 
 a:hover {
-	text-decoration: underline;
+	color: var(--term-green);
+	text-shadow: 0 0 8px rgba(77, 255, 160, 0.55);
+	text-decoration: none;
 }
 
 h1 {
@@ -131,12 +159,13 @@ h2 {
 pre {
 	font-size: 16px;
 	font-family: var(--font-mono);
-	background-color: rgba(255, 255, 255, 0.45);
+	background-color: rgba(13, 22, 18, 0.75);
+	border: 1px solid var(--term-border);
 	border-radius: 3px;
-	box-shadow: 2px 2px 6px rgb(255 255 255 / 25%);
+	box-shadow: 0 0 18px rgb(0 0 0 / 45%);
 	padding: 0.5em;
 	overflow-x: auto;
-	color: var(--color-text);
+	color: var(--term-text);
 }
 
 .text-column {
@@ -177,42 +206,24 @@ button:focus:not(:focus-visible) {
 }
 
 .dark {
-	--background:
-		oklch(0.145 0 0);
-	--foreground:
-		oklch(0.985 0 0);
-	--card:
-		oklch(0.205 0 0);
-	--card-foreground:
-		oklch(0.985 0 0);
-	--popover:
-		oklch(0.205 0 0);
-	--popover-foreground:
-		oklch(0.985 0 0);
-	--primary:
-		oklch(0.922 0 0);
-	--primary-foreground:
-		oklch(0.205 0 0);
-	--secondary:
-		oklch(0.269 0 0);
-	--secondary-foreground:
-		oklch(0.985 0 0);
-	--muted:
-		oklch(0.269 0 0);
-	--muted-foreground:
-		oklch(0.708 0 0);
-	--accent:
-		oklch(0.269 0 0);
-	--accent-foreground:
-		oklch(0.985 0 0);
-	--destructive:
-		oklch(0.704 0.191 22.216);
-	--border:
-		oklch(1 0 0 / 10%);
-	--input:
-		oklch(1 0 0 / 15%);
-	--ring:
-		oklch(0.556 0 0);
+	--background: #070b09;
+	--foreground: #cde8d6;
+	--card: #0e1512;
+	--card-foreground: #cde8d6;
+	--popover: #0b110e;
+	--popover-foreground: #cde8d6;
+	--primary: #4dffa0;
+	--primary-foreground: #04130b;
+	--secondary: #16201b;
+	--secondary-foreground: #cde8d6;
+	--muted: #131c17;
+	--muted-foreground: #708a7c;
+	--accent: #ff8c42;
+	--accent-foreground: #0a0f0d;
+	--destructive: #ff5f56;
+	--border: #1c2e25;
+	--input: #1c2e25;
+	--ring: #4dffa0;
 	--chart-1:
 		oklch(0.87 0 0);
 	--chart-2:
@@ -327,9 +338,163 @@ button:focus:not(:focus-visible) {
 		@apply border-border outline-ring/50;
 	}
 	body {
-		@apply bg-background text-foreground;
+		@apply text-foreground;
 	}
 	html {
 		@apply font-sans;
 	}
+}
+
+/* =====================================================================
+   Hacker / Climber aesthetic — shared utilities
+   ===================================================================== */
+
+.font-term {
+	font-family: var(--font-mono);
+}
+
+/* Glows */
+.glow-green {
+	text-shadow: 0 0 6px rgba(77, 255, 160, 0.55), 0 0 18px rgba(77, 255, 160, 0.3);
+}
+.glow-amber {
+	text-shadow: 0 0 6px rgba(255, 140, 66, 0.5), 0 0 16px rgba(255, 140, 66, 0.25);
+}
+
+/* `> ` terminal prompt prefix */
+.prompt::before {
+	content: '> ';
+	color: var(--term-green);
+	font-family: var(--font-mono);
+}
+.prompt-amber::before {
+	content: '> ';
+	color: var(--term-amber);
+	font-family: var(--font-mono);
+}
+
+/* Blinking block cursor — add to a text node's end */
+.cursor::after {
+	content: '▋';
+	margin-left: 0.1em;
+	color: var(--term-green);
+	animation: term-blink 1.05s steps(2, start) infinite;
+}
+@keyframes term-blink {
+	50% {
+		opacity: 0;
+	}
+}
+
+/* Global CRT scanline overlay — apply to the app root */
+.scanlines::after {
+	content: '';
+	position: fixed;
+	inset: 0;
+	z-index: 9999;
+	pointer-events: none;
+	background: repeating-linear-gradient(
+		0deg,
+		rgba(0, 0, 0, 0.16) 0,
+		rgba(0, 0, 0, 0.16) 1px,
+		transparent 1px,
+		transparent 3px
+	);
+	opacity: 0.35;
+}
+
+/* Terminal window frame */
+.term-window {
+	position: relative;
+	border: 1px solid var(--term-border);
+	border-radius: 8px;
+	background: rgba(11, 17, 14, 0.72);
+	backdrop-filter: blur(8px);
+	box-shadow:
+		inset 0 0 0 1px rgba(77, 255, 160, 0.04),
+		0 0 0 1px rgba(0, 0, 0, 0.4),
+		0 18px 50px rgba(0, 0, 0, 0.45);
+	overflow: hidden;
+}
+.term-window--glow {
+	box-shadow:
+		inset 0 0 0 1px rgba(77, 255, 160, 0.06),
+		0 0 0 1px rgba(0, 0, 0, 0.4),
+		0 0 28px rgba(77, 255, 160, 0.12),
+		0 18px 50px rgba(0, 0, 0, 0.5);
+}
+
+.term-titlebar {
+	display: flex;
+	align-items: center;
+	gap: 0.5rem;
+	padding: 0.5rem 0.85rem;
+	border-bottom: 1px solid var(--term-border);
+	background: linear-gradient(180deg, rgba(77, 255, 160, 0.05), rgba(0, 0, 0, 0));
+	font-family: var(--font-mono);
+	font-size: 0.72rem;
+	letter-spacing: 0.04em;
+	color: var(--term-muted);
+}
+.term-dot {
+	width: 0.7rem;
+	height: 0.7rem;
+	border-radius: 9999px;
+	display: inline-block;
+}
+.term-dot--red {
+	background: #ff5f56;
+}
+.term-dot--amber {
+	background: var(--term-amber);
+}
+.term-dot--green {
+	background: var(--term-green);
+}
+.term-title {
+	margin-left: 0.4rem;
+}
+.term-body {
+	padding: 1.15rem 1.25rem;
+}
+
+/* Tag / chip in `[ ... ]` brackets */
+.term-tag {
+	font-family: var(--font-mono);
+	font-size: 0.72rem;
+	color: var(--term-green);
+	border: 1px solid var(--term-border);
+	border-radius: 4px;
+	padding: 0.1rem 0.5rem;
+	background: rgba(77, 255, 160, 0.05);
+	transition: box-shadow 0.15s ease, border-color 0.15s ease;
+}
+.term-tag::before {
+	content: '[ ';
+	color: var(--term-muted);
+}
+.term-tag::after {
+	content: ' ]';
+	color: var(--term-muted);
+}
+.term-tag:hover {
+	border-color: var(--term-green-dim);
+	box-shadow: 0 0 10px rgba(77, 255, 160, 0.2);
+}
+
+/* Hairline section divider with a terminal comment label */
+.term-rule {
+	font-family: var(--font-mono);
+	font-size: 0.72rem;
+	color: var(--term-muted);
+	letter-spacing: 0.08em;
+	display: flex;
+	align-items: center;
+	gap: 0.75rem;
+}
+.term-rule::after {
+	content: '';
+	flex: 1;
+	height: 1px;
+	background: linear-gradient(90deg, var(--term-border), transparent);
 }

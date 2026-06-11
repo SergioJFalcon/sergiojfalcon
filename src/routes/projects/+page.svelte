@@ -121,11 +121,19 @@
   <meta name="description" content="Projects by Sergio Falcon" />
 </svelte:head>
 
-<main class="container mx-auto flex w-full flex-col">
-  <h1 class="max-6-xs my-16 text-4xl font-thin text-sky-700 uppercase">Projects</h1>
-  <div class="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
+<section class="mx-auto flex w-full flex-col py-10">
+  <div class="font-term mb-2 text-sm text-(--term-muted)">
+    <span class="text-(--term-green)">sergio@falcon</span>:<span class="text-(--term-amber)">~/projects</span>$
+    ls -la
+  </div>
+  <h1
+    class="glow-green mb-8 text-left font-term text-4xl font-bold tracking-tight text-(--term-green) lowercase"
+  >
+    ./projects
+  </h1>
+  <div class="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3">
     {#each portfolio as project (project.name)}
       <ProjectCard {project} />
     {/each}
   </div>
-</main>
+</section>
