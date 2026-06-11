@@ -1,11 +1,9 @@
 <script lang="ts">
 	import { resolve } from '$app/paths';
 	import { page } from '$app/state';
-	import github from '$lib/images/github.svg';
-	import logo from '$lib/images/svelte-logo.svg';
 </script>
 
-<header class="bg-green-200">
+<header class="">
 	<nav class="w-full">
 		<ul class="w-full">
 			<li aria-current={page.url.pathname === '/' ? 'page' : undefined}>
@@ -34,7 +32,6 @@
 	nav {
 		display: flex;
 		justify-content: center;
-		--background: rgba(255, 255, 255, 0.7);
 	}
 
 	ul {
@@ -46,8 +43,6 @@
 		justify-content: center;
 		align-items: center;
 		list-style: none;
-		background: var(--background);
-		background-size: contain;
 	}
 
 	li {
