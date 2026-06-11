@@ -10,7 +10,7 @@
 	let { children } = $props();
 </script>
 
-<div class="app dark scanlines">
+<div class="app dark">
 	<Header />
 	<main>
     {@render children()}
