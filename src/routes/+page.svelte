@@ -1,7 +1,6 @@
 <script lang="ts">
   import { resolve } from '$app/paths';
   import TermWindow from '$lib/components/TermWindow.svelte';
-  import HeroVideo from '$lib/videos/heroVideo.mp4';
 </script>
 
 <svelte:head>
@@ -12,7 +11,8 @@
 <div class="flex h-full w-full flex-col">
   <!-- Dimmed hero footage behind a deep gradient so terminal text stays legible -->
   <video autoplay loop muted playsinline class="fixed inset-0 -z-10 h-screen w-screen object-cover">
-    <source src={HeroVideo} type="video/mp4" />
+    <!-- R2 public URL — replace with your bucket's public domain once uploaded -->
+    <source src="https://pub-3a7425f9f682477db3d120f2aac9d510.r2.dev/heroVideo.mp4" type="video/mp4" />
   </video>
   <div
     class="fixed inset-0 -z-10 bg-[radial-gradient(120%_90%_at_50%_30%,rgba(7,11,9,0.55),rgba(7,11,9,0.92))]"
@@ -43,7 +43,7 @@
         <a
           href={resolve('/about')}
           target="_self"
-          class="group mt-1 inline-flex items-center gap-2 rounded-md border border-(--term-green-dim) bg-[rgba(77,255,160,0.06)] px-6 py-2.5 text-(--term-green) transition-all duration-150 hover:bg-[rgba(77,255,160,0.14)] hover:shadow-[0_0_22px_rgba(77,255,160,0.35)]"
+          class="group mt-1 inline-flex items-center gap-2 rounded-md border border-(--term-green-dim) bg-[rgba(86,156,214,0.06)] px-6 py-2.5 text-(--term-green) transition-all duration-150 hover:bg-[rgba(86,156,214,0.14)] hover:shadow-[0_0_22px_rgba(86,156,214,0.35)]"
         >
           <span class="text-(--term-muted) transition-colors group-hover:text-(--term-green)">[</span>
           <span class="glow-green tracking-widest uppercase">enter</span>
