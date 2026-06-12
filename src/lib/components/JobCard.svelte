@@ -16,15 +16,15 @@
 </script>
 
 <div
-  class="grid w-full grid-cols-6 items-center gap-2 rounded-md border border-(--term-border) bg-[rgba(77,255,160,0.03)] p-2 transition-shadow hover:shadow-[0_0_16px_rgba(77,255,160,0.12)]"
+  class="grid w-full grid-cols-[auto_1fr] items-center gap-3 rounded-md border border-(--term-border) bg-[rgba(86,156,214,0.04)] p-2 transition-shadow hover:shadow-[0_0_16px_rgba(86,156,214,0.12)]"
 >
-  <div id="work-image" class="col-span-1">
+  <div id="work-image" class="shrink-0">
     <Avatar.Root class="h-9 w-9 rounded border border-(--term-border)">
       <Avatar.Image src={work.image} alt={work.company} />
       <Avatar.Fallback>{work.initials}</Avatar.Fallback>
     </Avatar.Root>
   </div>
-  <div id="work-details" class="col-span-5">
+  <div id="work-details" class="min-w-0">
     <h5 class="text-sm font-semibold tracking-tight text-(--term-text)">
       {work.company}
     </h5>

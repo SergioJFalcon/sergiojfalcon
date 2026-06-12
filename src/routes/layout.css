@@ -14,17 +14,17 @@
 		Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 	--font-mono: 'Fira Mono', ui-monospace, SFMono-Regular, monospace;
 
-	/* ===== Dev / IDE × Climber palette ===== */
-	--term-bg: #0d1117; /* editor charcoal */
-	--term-bg-soft: #11161d;
-	--term-surface: #151b24; /* panel fill */
-	--term-border: #232b38; /* neutral hairline */
-	--term-green: #57c08c; /* muted emerald accent */
-	--term-green-dim: #3d8c68;
-	--term-amber: #e0914f; /* sandstone accent (climber) */
-	--term-amber-dim: #b06c33;
-	--term-text: #c9d3df; /* cool soft white */
-	--term-muted: #6e7a8a;
+	/* ===== VS Code Dark+ × Dev palette ===== */
+	--term-bg: #1e1e1e; /* VS Code editor background */
+	--term-bg-soft: #252526; /* VS Code sidebar */
+	--term-surface: #2d2d30; /* VS Code panel fill */
+	--term-border: #3c3c3c; /* VS Code border */
+	--term-green: #569cd6; /* VS Code keyword blue */
+	--term-green-dim: #3d7ab5;
+	--term-amber: #ce9178; /* VS Code string orange */
+	--term-amber-dim: #a0684a;
+	--term-text: #d4d4d4; /* VS Code editor text */
+	--term-muted: #858585; /* VS Code comment gray */
 
 	--color-bg-0: var(--term-bg);
 	--color-bg-1: var(--term-bg-soft);
@@ -205,24 +205,24 @@ button:focus:not(:focus-visible) {
 }
 
 .dark {
-	--background: #0d1117;
-	--foreground: #c9d3df;
-	--card: #151b24;
-	--card-foreground: #c9d3df;
-	--popover: #11161d;
-	--popover-foreground: #c9d3df;
-	--primary: #57c08c;
-	--primary-foreground: #07120c;
-	--secondary: #1a212c;
-	--secondary-foreground: #c9d3df;
-	--muted: #161c25;
-	--muted-foreground: #6e7a8a;
-	--accent: #e0914f;
-	--accent-foreground: #0d1117;
-	--destructive: #e5534b;
-	--border: #232b38;
-	--input: #232b38;
-	--ring: #57c08c;
+	--background: #1e1e1e;
+	--foreground: #d4d4d4;
+	--card: #2d2d30;
+	--card-foreground: #d4d4d4;
+	--popover: #252526;
+	--popover-foreground: #d4d4d4;
+	--primary: #569cd6;
+	--primary-foreground: #1e1e1e;
+	--secondary: #2d2d30;
+	--secondary-foreground: #d4d4d4;
+	--muted: #252526;
+	--muted-foreground: #858585;
+	--accent: #ce9178;
+	--accent-foreground: #1e1e1e;
+	--destructive: #f44747;
+	--border: #3c3c3c;
+	--input: #3c3c3c;
+	--ring: #569cd6;
 	--chart-1:
 		oklch(0.87 0 0);
 	--chart-2:
@@ -345,7 +345,7 @@ button:focus:not(:focus-visible) {
 }
 
 /* =====================================================================
-   Hacker / Climber aesthetic — shared utilities
+   VS Code / Dev aesthetic — shared utilities
    ===================================================================== */
 
 .font-term {
@@ -354,7 +354,7 @@ button:focus:not(:focus-visible) {
 
 /* Soft glows (kept subtle for the dev aesthetic) */
 .glow-green {
-	text-shadow: 0 0 14px rgba(87, 192, 140, 0.22);
+	text-shadow: 0 0 14px rgba(86, 156, 214, 0.3);
 }
 .glow-amber {
 	text-shadow: 0 0 14px rgba(224, 145, 79, 0.2);
@@ -390,10 +390,10 @@ button:focus:not(:focus-visible) {
 	position: relative;
 	border: 1px solid var(--term-border);
 	border-radius: 8px;
-	background: rgba(11, 17, 14, 0.72);
+	background: rgba(30, 30, 30, 0.85);
 	backdrop-filter: blur(8px);
 	box-shadow:
-		inset 0 0 0 1px rgba(77, 255, 160, 0.04),
+		inset 0 0 0 1px rgba(86, 156, 214, 0.06),
 		0 0 0 1px rgba(0, 0, 0, 0.4),
 		0 18px 50px rgba(0, 0, 0, 0.45);
 	overflow: hidden;
@@ -460,7 +460,7 @@ button:focus:not(:focus-visible) {
 	border: 1px solid var(--term-border);
 	border-radius: 4px;
 	padding: 0.1rem 0.5rem;
-	background: rgba(77, 255, 160, 0.05);
+	background: rgba(86, 156, 214, 0.08);
 	transition: box-shadow 0.15s ease, border-color 0.15s ease;
 }
 .term-tag::before {
@@ -473,7 +473,7 @@ button:focus:not(:focus-visible) {
 }
 .term-tag:hover {
 	border-color: var(--term-green-dim);
-	background: rgba(87, 192, 140, 0.1);
+	background: rgba(86, 156, 214, 0.12);
 }
 
 /* Hairline section divider with a terminal comment label */

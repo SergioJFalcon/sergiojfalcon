@@ -14,6 +14,16 @@
 
   const history = [
     {
+      image: '',
+      company: 'Aisin',
+      initials: 'AI',
+      title: 'Software Developer',
+      description: 'Building internal factory operations software including TPDA systems, inventory management, machine monitoring, and computer vision pipelines.',
+      startDate: 'Nov 2023',
+      endDate: 'Present',
+      url: 'https://www.aisin.com'
+    },
+    {
       image: RegScaleLogo,
       company: 'RegScale Inc.',
       initials: 'RS',
@@ -47,6 +57,7 @@
 
   const climbs = {
     boulder: [
+      { name: 'Tilted World', grade: 'V13', location: 'Obed, TN', date: '1/04/2026' },
       { name: 'Nine Pound Hammer', grade: 'V12', location: 'Austin, TX', date: '11/28/2023' },
       { name: 'Rumble in the Jungle', grade: 'V12', location: 'Hueco Tanks, TX', date: '2/27/2021' },
       { name: 'Tequila Sunrise Sit Start', grade: 'V12', location: 'Hueco Tanks, TX', date: '2/10/2024' },
@@ -75,7 +86,7 @@
   <div class="mb-6 flex w-full items-center justify-between gap-4">
     <div class="flex items-center gap-4">
       <Avatar.Root
-        class="h-28 w-28 rounded-md border border-(--term-border) shadow-[0_0_24px_rgba(77,255,160,0.15)]"
+        class="h-28 w-28 rounded-md border border-(--term-border) shadow-[0_0_24px_rgba(86,156,214,0.15)]"
       >
         <Avatar.Image src={logo} alt="Sergio Falcon" />
         <Avatar.Fallback>SF</Avatar.Fallback>
@@ -92,7 +103,7 @@
     </div>
     <a href={resume} target="_self" class="shrink-0">
       <Button
-        class="font-term rounded-md border border-(--term-green-dim) bg-transparent text-(--term-green) hover:bg-[rgba(77,255,160,0.12)]"
+        class="font-term rounded-md border border-(--term-green-dim) bg-transparent text-(--term-green) hover:bg-[rgba(86,156,214,0.12)]"
       >
         ./resume.pdf
       </Button>

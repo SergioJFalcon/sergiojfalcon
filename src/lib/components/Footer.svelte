@@ -11,11 +11,11 @@
   // LinkedIn was removed from Simple Icons (trademark), so it's inlined below.
   const socials = [
     { href: 'https://www.github.com/sergiojfalcon', icon: SiGithub, label: 'GitHub' },
-    { href: 'https://www.youtube.com/@powersergio', icon: SiYoutube, label: 'YouTube' },
-    { href: 'https://www.twitch.com/powersergio', icon: SiTwitch, label: 'Twitch' },
-    { href: 'https://www.instagram.com/sergiojfalcon', icon: SiInstagram, label: 'Instagram' },
-    { href: 'https://www.twitter.com/sergiojfalcon', icon: SiX, label: 'X (Twitter)' },
-    { href: 'https://www.facebook.com/sergiojfalcon', icon: SiFacebook, label: 'Facebook' }
+    // { href: 'https://www.youtube.com/@powersergio', icon: SiYoutube, label: 'YouTube' },
+    // { href: 'https://www.twitch.com/powersergio', icon: SiTwitch, label: 'Twitch' },
+    // { href: 'https://www.instagram.com/sergiojfalcon', icon: SiInstagram, label: 'Instagram' },
+    // { href: 'https://www.twitter.com/sergiojfalcon', icon: SiX, label: 'X (Twitter)' },
+    // { href: 'https://www.facebook.com/sergiojfalcon', icon: SiFacebook, label: 'Facebook' }
   ];
 </script>
 
@@ -50,7 +50,7 @@
       {/each}
     </div>
     <div class="font-term text-center text-xs text-(--term-muted)">
-      <span class="text-(--term-green-dim)">$</span> echo "© 2024 Sergio Falcon"
+      © 2024 Sergio Falcon
     </div>
   </div>
 </footer>
