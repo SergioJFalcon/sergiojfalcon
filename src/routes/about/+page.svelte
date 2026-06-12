@@ -126,7 +126,7 @@
           and have set routes for local climbing gyms. I'm currently working on developing a
           climbing app to help climbers track their progress and share their climbing experiences.
           Some achievements in climbing:
-          <span class="term-tag">V12</span> <span class="term-tag">5.14a</span>
+          <span class="term-tag">V13</span> <span class="term-tag">5.14a</span>
         </p>
         <p class="text-(--term-text)">
           I'm always looking for new opportunities to learn and grow as a developer and climber.
