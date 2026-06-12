@@ -14,6 +14,9 @@
 		"format": "prettier --write .",
 		"gen": "wrangler types"
 	},
+	"pnpm": {
+		"onlyBuiltDependencies": ["@tailwindcss/oxide", "esbuild", "sharp", "workerd"]
+	},
 	"devDependencies": {
 		"@eslint/js": "^10.0.1",
 		"@fontsource-variable/geist": "^5.2.9",
