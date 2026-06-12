@@ -439,21 +439,96 @@ button:focus:not(:focus-visible) {
 	justify-content: center;
 	width: 1.6rem;
 	height: 1.3rem;
+	border: none;
 	border-radius: 3px;
+	background: transparent;
 	color: var(--term-muted);
 	font-size: 0.7rem;
 	line-height: 1;
+	cursor: pointer;
+	transition:
+		background 0.12s ease,
+		color 0.12s ease;
+}
+.term-winctrl:hover {
+	background: rgba(86, 156, 214, 0.14);
+	color: var(--term-text);
 }
 .term-winctrl--close:hover {
 	background: rgba(229, 83, 75, 0.16);
 	color: #e5534b;
 }
+.term-winctrl:focus-visible {
+	outline: 1px solid var(--term-green-dim);
+	outline-offset: 1px;
+}
 .term-body {
 	padding: 1.15rem 1.25rem;
 }
 
+/* Minimized: collapse to just the titlebar */
+.term-window--min .term-titlebar {
+	border-bottom: none;
+}
+
+/* Maximized: float a centered window above everything (incl. the z-1000 header) */
+.term-window--max {
+	position: fixed;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	width: min(960px, 92vw);
+	height: min(85vh, 800px);
+	max-width: none;
+	margin: 0;
+	z-index: 1101;
+	display: flex;
+	flex-direction: column;
+}
+.term-window--max .term-body {
+	flex: 1;
+	min-height: 0;
+	overflow: auto;
+}
+.term-backdrop {
+	position: fixed;
+	inset: 0;
+	z-index: 1100;
+	border: none;
+	background: rgba(7, 11, 9, 0.6);
+	backdrop-filter: blur(2px);
+	cursor: pointer;
+}
+
+/* Closed: leave a small restorable chip in the window's place */
+.term-restore {
+	display: inline-flex;
+	align-items: center;
+	gap: 0.5rem;
+	padding: 0.4rem 0.75rem;
+	border: 1px dashed var(--term-border);
+	border-radius: 6px;
+	background: var(--term-bg-soft);
+	color: var(--term-muted);
+	font-size: 0.74rem;
+	letter-spacing: 0.02em;
+	cursor: pointer;
+	transition:
+		border-color 0.12s ease,
+		color 0.12s ease;
+}
+.term-restore:hover {
+	border-color: var(--term-green-dim);
+	color: var(--term-green);
+}
+.term-restore-hint {
+	color: var(--term-green);
+}
+
 /* Tag / chip in `[ ... ]` brackets */
 .term-tag {
+	display: inline-block;
+	white-space: nowrap;
 	font-family: var(--font-mono);
 	font-size: 0.72rem;
 	color: var(--term-green);

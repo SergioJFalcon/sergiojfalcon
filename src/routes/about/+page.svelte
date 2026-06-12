@@ -84,16 +84,18 @@
     cat profile.md
   </div>
 
-  <div class="mb-6 flex w-full items-center justify-between gap-4">
-    <div class="flex items-center gap-4">
+  <div
+    class="mb-6 flex w-full flex-col items-start gap-4 sm:flex-row sm:items-center sm:justify-between"
+  >
+    <div class="flex min-w-0 items-center gap-4">
       <Avatar.Root
-        class="h-28 w-28 rounded-md border border-(--term-border) shadow-[0_0_24px_rgba(86,156,214,0.15)]"
+        class="h-20 w-20 shrink-0 rounded-md border border-(--term-border) shadow-[0_0_24px_rgba(86,156,214,0.15)] sm:h-28 sm:w-28"
       >
         <Avatar.Image src={logo} alt="Sergio Falcon" />
         <Avatar.Fallback>SF</Avatar.Fallback>
       </Avatar.Root>
-      <div>
-        <h1 class="glow-green text-left text-3xl font-bold text-(--term-green) sm:text-4xl">
+      <div class="min-w-0">
+        <h1 class="glow-green text-left text-2xl font-bold text-(--term-green) sm:text-4xl">
           Sergio Falcon
         </h1>
         <p class="font-term text-sm text-(--term-muted)">
@@ -102,9 +104,9 @@
         </p>
       </div>
     </div>
-    <a href={resume} target="_self" class="shrink-0">
+    <a href={resume} target="_self" class="w-full shrink-0 sm:w-auto">
       <Button
-        class="font-term rounded-md border border-(--term-green-dim) bg-transparent text-(--term-green) hover:bg-[rgba(86,156,214,0.12)]"
+        class="font-term w-full rounded-md border border-(--term-green-dim) bg-transparent text-(--term-green) hover:bg-[rgba(86,156,214,0.12)] sm:w-auto"
       >
         ./resume.pdf
       </Button>
@@ -164,9 +166,9 @@
             <div class="term-rule mb-2 text-(--term-amber)">// boulder</div>
             {#each climbs.boulder as climb (climb.name)}
               <div class="font-term flex items-baseline gap-2 py-0.5 text-sm">
-                <span class="term-tag">{climb.grade}</span>
-                <span class="text-(--term-text)">{climb.name}</span>
-                <span class="ml-auto text-xs text-(--term-muted)">{climb.location}</span>
+                <span class="term-tag shrink-0">{climb.grade}</span>
+                <span class="min-w-0 text-(--term-text)">{climb.name}</span>
+                <span class="ml-auto shrink-0 pl-2 text-xs text-(--term-muted)">{climb.location}</span>
               </div>
             {/each}
           </div>
@@ -174,9 +176,9 @@
             <div class="term-rule mb-2 text-(--term-amber)">// sport</div>
             {#each climbs.sport as climb (climb.name)}
               <div class="font-term flex items-baseline gap-2 py-0.5 text-sm">
-                <span class="term-tag">{climb.grade}</span>
-                <span class="text-(--term-text)">{climb.name}</span>
-                <span class="ml-auto text-xs text-(--term-muted)">{climb.location}</span>
+                <span class="term-tag shrink-0">{climb.grade}</span>
+                <span class="min-w-0 text-(--term-text)">{climb.name}</span>
+                <span class="ml-auto shrink-0 pl-2 text-xs text-(--term-muted)">{climb.location}</span>
               </div>
             {/each}
           </div>
