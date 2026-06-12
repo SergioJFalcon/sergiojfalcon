@@ -5,7 +5,8 @@
   const links = [
     { href: '/', label: 'home' },
     { href: '/about', label: 'about' },
-    { href: '/portfolio', label: 'portfolio' }
+    { href: '/portfolio', label: 'portfolio' },
+    { href: '/contact', label: 'contact' }
   ] as const;
 
   const isActive = (path: string) => page.url.pathname === path;

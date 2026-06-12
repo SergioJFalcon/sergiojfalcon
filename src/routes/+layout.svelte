@@ -5,6 +5,7 @@
 	import { locales, localizeHref } from '$lib/paraglide/runtime';
 	import Header from '$lib/components/navigations/headers/Header.svelte';
 	import Footer from '$lib/components/Footer.svelte';
+	import { Toaster } from '$lib/components/ui/sonner/index';
 	import './layout.css';
 
 	let { children } = $props();
@@ -18,6 +19,8 @@
 
 	<Footer />
 </div>
+
+<Toaster theme="dark" richColors position="bottom-right" />
 
 <div style="display:none">
 	{#each locales as locale (locale)}

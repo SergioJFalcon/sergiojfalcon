@@ -15,7 +15,12 @@
 		"gen": "wrangler types"
 	},
 	"pnpm": {
-		"onlyBuiltDependencies": ["@tailwindcss/oxide", "esbuild", "sharp", "workerd"]
+		"onlyBuiltDependencies": [
+			"@tailwindcss/oxide",
+			"esbuild",
+			"sharp",
+			"workerd"
+		]
 	},
 	"devDependencies": {
 		"@eslint/js": "^10.0.1",
@@ -63,5 +68,8 @@
 		"vaul-svelte": "1.0.0-next.7",
 		"vite": "^8.0.16",
 		"wrangler": "^4.97.0"
+	},
+	"dependencies": {
+		"zod": "^4.4.3"
 	}
 }

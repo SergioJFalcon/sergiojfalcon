@@ -3,7 +3,7 @@
 declare global {
 	namespace App {
 		interface Platform {
-			env: Env;
+			env: Cloudflare.Env;
 			ctx: ExecutionContext;
 			caches: CacheStorage;
 			cf?: IncomingRequestCfProperties;
