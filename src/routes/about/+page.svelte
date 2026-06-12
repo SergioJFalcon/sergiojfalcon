@@ -10,7 +10,7 @@
   import GovReadyLogo from '$lib/images/govready/govreadyIcon.png';
   import RegScaleLogo from '$lib/images/regscale/regscaleIcon.png';
 
-  const resume = '/Sergio_Falcon_Resume_v5.pdf';
+  const resume = '/Sergio_Falcon_Resume.pdf';
 
   const history = [
     {
