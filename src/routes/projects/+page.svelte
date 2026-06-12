@@ -33,8 +33,8 @@
       description: "Internal factory application for monitoring die-cast machine camera feeds captured every few seconds, enabling operators to detect slag and debris buildup inside the machines. When overflow is identified, the system alerts the appropriate personnel to reduce the risk of the slag igniting. Also includes a data labeling pipeline for tagging slag images with bounding boxes to train a YOLO computer vision model for automated detection.",
       company: "Aisin",
       logo: "",
-      initials: "AI",
-      techstack: ["Svelte", "FastAPI", "TypeScript", "Python", "SQLite", "YOLOv8"],
+      initials: "DM",
+      techstack: ["Svelte", "FastAPI", "TypeScript", "Python", "SQLite", "YOLOv12"],
       links: [],
       images: []
     },
@@ -43,7 +43,7 @@
       description: "Main internal web platform for Aisin factory operations, housing several integrated modules: a TPDA system that replaced a costly legacy application, a role-based inventory and checkout system managing 43,000+ items across multiple locations, a cleanroom sensor monitoring dashboard with real-time gauge displays, a tools budget performance tracker, and production analytics. Integrates with LIFX smart lights on the factory floor — machines send status requests to the application, which updates light states, fires production events, and tracks output counts. Includes a robust background notification service with scheduled delivery and automated retry.",
       company: "Aisin",
       logo: "",
-      initials: "AI",
+      initials: "AACT",
       techstack: ["Vue", ".NET Core", "TypeScript", "MySQL", "Quartz.NET"],
       links: [],
       images: []
@@ -101,7 +101,7 @@
       },
       logo: GovReadyLogo,
       initials: "GR",
-      company: "RegScale",
+      company: "GovReady",
       techstack: [
         "React",
         "Django",
@@ -172,6 +172,7 @@
     next.has(tech) ? next.delete(tech) : next.add(tech);
     selectedTechs = next;
   }
+  
 </script>
 
 <svelte:head>

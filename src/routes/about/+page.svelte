@@ -9,12 +9,13 @@
   import ClimbalyticsLogo from '$lib/images/climbalytics/climbalyticsIcon.png';
   import GovReadyLogo from '$lib/images/govready/govreadyIcon.png';
   import RegScaleLogo from '$lib/images/regscale/regscaleIcon.png';
+  import AisinLogo from '$lib/images/aisin/aisin_logo.ico';
 
   const resume = '/Sergio_Falcon_Resume.pdf';
 
   const history = [
     {
-      image: '',
+      image: AisinLogo,
       company: 'Aisin',
       initials: 'AI',
       title: 'Software Developer',
