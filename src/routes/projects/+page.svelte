@@ -1,5 +1,6 @@
 <script lang="ts">
   import ProjectCard from '$lib/components/ProjectCard.svelte';
+  import { techGroups as allTechGroups } from '$lib/techColors';
 
   import Climbalytics3 from '$lib/images/climbalytics/calendar.png';
   import ClimbalyticsLogo from '$lib/images/climbalytics/climbalyticsIcon.png';
@@ -9,7 +10,44 @@
   import Regscale1 from '$lib/images/regscale/regscale1.png';
   import RegScaleLogo from '$lib/images/regscale/regscaleIcon.png';
 
+  let selectedTechs = $state(new Set<string>());
+
   const portfolio = [
+    {
+      name: "ClimbTrainer",
+      description: "A climbing training app that generates personalized training programs tailored to the individual athlete. The program adapts dynamically as the climber progresses — or faces setbacks like injuries — keeping training effective and realistic at every stage.",
+      company: "ClimbTrainer",
+      logo: "",
+      initials: "CT",
+      techstack: ["SvelteKit", "Axum", "TypeScript", "Rust", "PostgreSQL", "Redis"],
+      links: [
+        {
+          name: "climbtrainer.app",
+          url: "https://climbtrainer.app/"
+        }
+      ],
+      images: []
+    },
+    {
+      name: "DCM Monitor",
+      description: "Internal factory application for monitoring die-cast machine camera feeds captured every few seconds, enabling operators to detect slag and debris buildup inside the machines. When overflow is identified, the system alerts the appropriate personnel to reduce the risk of the slag igniting. Also includes a data labeling pipeline for tagging slag images with bounding boxes to train a YOLO computer vision model for automated detection.",
+      company: "Aisin",
+      logo: "",
+      initials: "AI",
+      techstack: ["Svelte", "FastAPI", "TypeScript", "Python", "SQLite", "YOLOv8"],
+      links: [],
+      images: []
+    },
+    {
+      name: "AACT Web Application",
+      description: "Main internal web platform for Aisin factory operations, housing several integrated modules: a TPDA system that replaced a costly legacy application, a role-based inventory and checkout system managing 43,000+ items across multiple locations, a cleanroom sensor monitoring dashboard with real-time gauge displays, a tools budget performance tracker, and production analytics. Integrates with LIFX smart lights on the factory floor — machines send status requests to the application, which updates light states, fires production events, and tracks output counts. Includes a robust background notification service with scheduled delivery and automated retry.",
+      company: "Aisin",
+      logo: "",
+      initials: "AI",
+      techstack: ["Vue", ".NET Core", "TypeScript", "MySQL", "Quartz.NET"],
+      links: [],
+      images: []
+    },
     {
       name: "GRC Platform Tool ",
       description: "GRC platform tool that will streamline an organization's compliance journey by digitizing compliance artifacts into a digital system of record, automating existing security and compliance tools to keep compliance documentation continuously up to date, transform existing records to output to both human and machine-readable formats, and lastly scale any environment with tenants for every business unit with enterprise reporting across the organization in your Business Intelligence platform of choice.",
@@ -69,7 +107,8 @@
         "Django",
         "Python",
         "Docker",
-        "PostgreSQL"
+        "PostgreSQL",
+        "Material UI"
       ],
       links: [
         {
@@ -114,6 +153,25 @@
       ]
     }
   ];
+
+  const techGroups = (() => {
+    const present = new Set(portfolio.flatMap((p) => p.techstack));
+    return allTechGroups
+      .map((g) => ({ ...g, techs: g.techs.filter((t) => present.has(t)) }))
+      .filter((g) => g.techs.length > 0);
+  })();
+
+  const filtered = $derived(
+    selectedTechs.size === 0
+      ? portfolio
+      : portfolio.filter((p) => p.techstack.some((t) => selectedTechs.has(t)))
+  );
+
+  function toggleTech(tech: string) {
+    const next = new Set(selectedTechs);
+    next.has(tech) ? next.delete(tech) : next.add(tech);
+    selectedTechs = next;
+  }
 </script>
 
 <svelte:head>
@@ -131,8 +189,43 @@
   >
     ./projects
   </h1>
+  <div class="mb-6 flex flex-col gap-3">
+    <div class="flex items-center justify-between">
+      <span class="term-rule w-full text-(--term-muted)">// filter by techstack</span>
+      {#if selectedTechs.size > 0}
+        <button
+          onclick={() => (selectedTechs = new Set())}
+          class="font-term ml-4 shrink-0 cursor-pointer rounded border border-(--term-border) px-2 py-0.5 text-xs text-(--term-muted) transition-all duration-150 hover:border-red-500/50 hover:text-red-400"
+        >
+          ✕ clear
+        </button>
+      {/if}
+    </div>
+    {#each techGroups as group (group.label)}
+      <div class="flex flex-wrap items-center gap-2">
+        <span
+          class="font-term w-36 shrink-0 text-xs"
+          style="color: {group.color}"
+        >{group.label}</span>
+        {#each group.techs as tech (tech)}
+          {@const active = selectedTechs.has(tech)}
+          <button
+            onclick={() => toggleTech(tech)}
+            class="font-term cursor-pointer rounded border px-2 py-0.5 text-xs transition-all duration-150
+              {active ? '' : 'border-(--term-border) bg-transparent text-(--term-muted) hover:text-(--term-text)'}"
+            style={active
+              ? `border-color: ${group.color}; color: ${group.color}; background-color: ${group.color}22`
+              : ''}
+          >
+            {tech}
+          </button>
+        {/each}
+      </div>
+    {/each}
+  </div>
+
   <div class="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3">
-    {#each portfolio as project (project.name)}
+    {#each filtered as project (project.name)}
       <ProjectCard {project} />
     {/each}
   </div>

@@ -1,5 +1,6 @@
 <script lang="ts">
   import { Link as LinkIcon } from '@lucide/svelte';
+  import { techColor } from '$lib/techColors';
   import * as Avatar from '$lib/components/ui/avatar/index';
   import { Badge } from '$lib/components/ui/badge/index';
   import * as Card from '$lib/components/ui/card/index';
@@ -21,7 +22,7 @@
 
 <div class="group h-full">
   <Card.Root
-    class="h-full gap-4 border-(--term-border) bg-[rgba(11,17,14,0.72)] backdrop-blur-md transition-all duration-200 group-hover:border-(--term-green-dim) group-hover:shadow-[0_0_26px_rgba(77,255,160,0.14)]"
+    class="h-full gap-4 border-(--term-border) bg-[rgba(30,30,30,0.85)] backdrop-blur-md transition-all duration-200 group-hover:border-(--term-green-dim) group-hover:shadow-[0_0_26px_rgba(86,156,214,0.16)]"
   >
     <Card.Header class="flex flex-row items-center gap-3">
       <Avatar.Root class="h-11 w-11 rounded border border-(--term-border)">
@@ -43,7 +44,11 @@
           <span class="term-rule mb-2 w-full text-(--term-amber)">// techstack</span>
           <div class="flex flex-wrap gap-1.5">
             {#each project.techstack as tech (tech)}
-              <span class="term-tag">{tech}</span>
+              {@const color = techColor(tech)}
+              <span
+                class="term-tag"
+                style="color: {color}; border-color: {color}40; background-color: {color}12"
+              >{tech}</span>
             {/each}
           </div>
         </div>
