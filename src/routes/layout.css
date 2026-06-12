@@ -526,10 +526,25 @@ button:focus:not(:focus-visible) {
 }
 
 /* Interactive terminal prompt (home page) */
-.term-prompt {
-	max-height: 22rem;
-	overflow-y: auto;
+.term-prompt__content {
 	cursor: text;
+}
+/* Nudge the scrollbar out into term-body's right padding so it clears the text */
+.term-prompt [data-slot='scroll-area-scrollbar'] {
+	transform: translateX(0.85rem);
+}
+/* Cap the ScrollArea viewport so it grows with content, then scrolls */
+.term-prompt [data-slot='scroll-area-viewport'] {
+	max-height: 22rem;
+}
+/* Theme the ScrollArea thumb to match the terminal */
+.term-prompt [data-slot='scroll-area-thumb'] {
+	background: var(--term-green-dim);
+	opacity: 0.5;
+	transition: opacity 0.15s ease;
+}
+.term-prompt [data-slot='scroll-area-thumb']:hover {
+	opacity: 0.85;
 }
 .term-prompt__line {
 	display: flex;

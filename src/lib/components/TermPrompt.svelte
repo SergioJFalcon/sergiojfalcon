@@ -2,6 +2,7 @@
   import { onMount, tick } from 'svelte';
   import { goto } from '$app/navigation';
   import { resolve } from '$app/paths';
+  import { ScrollArea } from '$lib/components/ui/scroll-area/index';
   import { climbs } from '$lib/data/climbs';
   import { portfolio } from '$lib/data/projects';
   import { identity, bio, work } from '$lib/data/profile';
@@ -42,7 +43,7 @@
   let past = $state<string[]>([]);
   let pastIdx = $state(-1);
 
-  let scroller = $state<HTMLDivElement>();
+  let scroller = $state<HTMLElement | null>(null);
   let inputEl = $state<HTMLInputElement>();
 
   function print(input: string, kind: OutputKind, lines?: string[]) {
@@ -196,13 +197,10 @@
   onMount(() => focusInput());
 </script>
 
-<!-- svelte-ignore a11y_no_static_element_interactions, a11y_click_events_have_key_events -->
-<div
-  class="term-prompt font-term text-sm leading-relaxed sm:text-base"
-  bind:this={scroller}
-  onclick={focusInput}
->
-  {#each history as entry (entry.id)}
+<ScrollArea class="term-prompt" bind:viewportRef={scroller}>
+  <!-- svelte-ignore a11y_no_static_element_interactions, a11y_click_events_have_key_events -->
+  <div class="term-prompt__content font-term text-sm leading-relaxed sm:text-base" onclick={focusInput}>
+    {#each history as entry (entry.id)}
     {#if entry.input}
       <div class="term-prompt__line">
         <span class="text-(--term-green)">$</span>
@@ -297,7 +295,7 @@
                   <a
                     href={link.url}
                     target="_blank"
-                    rel="noopener noreferrer"
+                    rel="external noopener noreferrer"
                     class="mr-3 text-(--term-amber) hover:underline">↗ {link.name}</a
                   >
                 {/each}
@@ -309,19 +307,20 @@
     {/if}
   {/each}
 
-  <div class="term-prompt__line">
-    <span class="text-(--term-green)">$</span>
-    <input
-      bind:this={inputEl}
-      bind:value
-      onkeydown={onKeydown}
-      class="term-prompt__field"
-      type="text"
-      autocomplete="off"
-      autocapitalize="off"
-      autocorrect="off"
-      spellcheck="false"
-      aria-label="terminal input"
-    />
+    <div class="term-prompt__line">
+      <span class="text-(--term-green)">$</span>
+      <input
+        bind:this={inputEl}
+        bind:value
+        onkeydown={onKeydown}
+        class="term-prompt__field"
+        type="text"
+        autocomplete="off"
+        autocapitalize="off"
+        autocorrect="off"
+        spellcheck="false"
+        aria-label="terminal input"
+      />
+    </div>
   </div>
-</div>
+</ScrollArea>
