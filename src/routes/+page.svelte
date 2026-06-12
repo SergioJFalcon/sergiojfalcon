@@ -1,5 +1,6 @@
 <script lang="ts">
   import { resolve } from '$app/paths';
+  import TermWindow from '$lib/components/TermWindow.svelte';
   import HeroVideo from '$lib/videos/heroVideo.mp4';
 </script>
 
@@ -9,26 +10,46 @@
 </svelte:head>
 
 <div class="flex h-full w-full flex-col">
-  <video
-    autoplay
-    loop
-    muted
-    playsinline
-    class="fixed inset-0 -z-10 h-screen w-screen object-cover"
-  >
+  <!-- Dimmed hero footage behind a deep gradient so terminal text stays legible -->
+  <video autoplay loop muted playsinline class="fixed inset-0 -z-10 h-screen w-screen object-cover">
     <source src={HeroVideo} type="video/mp4" />
   </video>
-  
-  <div class="flex min-h-full min-w-full flex-col items-center justify-center">
-    <div class="text-center">
-      <h1 class="text-6xl font-semibold text-white">Sergio Falcon</h1>
-      <a
-        href={resolve('/about')}
-        target="_self"
-        class="mt-5 inline-block rounded-full border-2 border-white px-16 py-3 text-xl text-white"
-      >
-        Enter
-      </a>
-    </div>
+  <div
+    class="fixed inset-0 -z-10 bg-[radial-gradient(120%_90%_at_50%_30%,rgba(7,11,9,0.55),rgba(7,11,9,0.92))]"
+  ></div>
+
+  <div class="flex min-h-full w-full flex-col items-center justify-center px-4 py-16">
+    <TermWindow title="sergio@falcon: ~/welcome" glow class="w-full max-w-xl">
+      <div class="font-term space-y-3 text-sm leading-relaxed sm:text-base">
+        <p class="text-(--term-muted)">
+          <span class="text-(--term-green)">$</span> whoami
+        </p>
+        <h1
+          class="glow-green text-left text-4xl font-semibold tracking-tight text-(--term-green) sm:text-6xl"
+        >
+          Sergio&nbsp;Falcon
+        </h1>
+        <p class="text-(--term-muted)">
+          <span class="text-(--term-amber)">&gt;</span>
+          <span class="text-(--term-text)">Full&nbsp;Stack&nbsp;Developer</span>
+          <span class="text-(--term-muted)">//</span>
+          <span class="glow-amber text-(--term-amber)">Rock&nbsp;Climber</span>
+        </p>
+
+        <p class="pt-2 text-(--term-muted)">
+          <span class="text-(--term-green)">$</span> ./enter <span class="cursor"></span>
+        </p>
+
+        <a
+          href={resolve('/about')}
+          target="_self"
+          class="group mt-1 inline-flex items-center gap-2 rounded-md border border-(--term-green-dim) bg-[rgba(77,255,160,0.06)] px-6 py-2.5 text-(--term-green) transition-all duration-150 hover:bg-[rgba(77,255,160,0.14)] hover:shadow-[0_0_22px_rgba(77,255,160,0.35)]"
+        >
+          <span class="text-(--term-muted) transition-colors group-hover:text-(--term-green)">[</span>
+          <span class="glow-green tracking-widest uppercase">enter</span>
+          <span class="text-(--term-muted) transition-colors group-hover:text-(--term-green)">]</span>
+        </a>
+      </div>
+    </TermWindow>
   </div>
 </div>

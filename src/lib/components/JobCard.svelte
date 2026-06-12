@@ -15,25 +15,24 @@
   let { work }: { work: Work } = $props();
 </script>
 
-<div class="grid w-full grid-cols-6 gap-2 rounded-lg shadow">
-  <div id="work-image" class="col-span-1">
-    <Avatar.Root class="mt-2">
+<div
+  class="grid w-full grid-cols-[auto_1fr] items-center gap-3 rounded-md border border-(--term-border) bg-[rgba(86,156,214,0.04)] p-2 transition-shadow hover:shadow-[0_0_16px_rgba(86,156,214,0.12)]"
+>
+  <div id="work-image" class="shrink-0">
+    <Avatar.Root class="h-9 w-9 rounded border border-(--term-border)">
       <Avatar.Image src={work.image} alt={work.company} />
       <Avatar.Fallback>{work.initials}</Avatar.Fallback>
     </Avatar.Root>
   </div>
-  <div id="work-details" class="col-span-5">
-    <h5 class="text-lg font-semibold tracking-tight text-gray-900 dark:text-white">
+  <div id="work-details" class="min-w-0">
+    <h5 class="text-sm font-semibold tracking-tight text-(--term-text)">
       {work.company}
     </h5>
-    <p class="text-sm font-normal text-gray-600 dark:text-gray-200">
+    <p class="font-term text-xs text-(--term-muted)">
       {work.title}
     </p>
-    <div
-      id="date-range"
-      class="px-4 pb-2 text-right text-sm font-normal text-gray-500 dark:text-gray-400"
-    >
-      <span>{work.startDate} - {work.endDate}</span>
+    <div id="date-range" class="font-term text-right text-xs text-(--term-green-dim)">
+      <span>{work.startDate} — {work.endDate}</span>
     </div>
   </div>
 </div>
