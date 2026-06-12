@@ -525,6 +525,71 @@ button:focus:not(:focus-visible) {
 	color: var(--term-green);
 }
 
+/* Interactive terminal prompt (home page) */
+.term-prompt {
+	max-height: 22rem;
+	overflow-y: auto;
+	cursor: text;
+}
+.term-prompt__line {
+	display: flex;
+	align-items: baseline;
+	gap: 0.5rem;
+}
+.term-prompt__field {
+	flex: 1;
+	min-width: 0;
+	padding: 0;
+	border: none;
+	outline: none;
+	box-shadow: none;
+	-webkit-tap-highlight-color: transparent;
+	background: transparent;
+	color: var(--term-text);
+	font-family: var(--font-mono);
+	font-size: inherit;
+	line-height: inherit;
+	caret-color: var(--term-green);
+}
+.term-prompt__field:focus,
+.term-prompt__field:focus-visible {
+	outline: none;
+	box-shadow: none;
+}
+.term-prompt__grid {
+	display: grid;
+	grid-template-columns: auto 1fr;
+	gap: 0.15rem 1.25rem;
+}
+.term-ls {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 0.2rem 1.5rem;
+}
+.term-ls__dir,
+.term-ls__file {
+	padding: 0;
+	border: none;
+	background: none;
+	font-family: var(--font-mono);
+	font-size: inherit;
+	cursor: pointer;
+}
+.term-ls__dir {
+	color: var(--term-green);
+	font-weight: 600;
+}
+.term-ls__file {
+	color: var(--term-text);
+}
+.term-ls__dir:hover,
+.term-ls__file:hover {
+	text-decoration: underline;
+}
+.term-ls__file:hover {
+	color: var(--term-green);
+}
+
 /* Tag / chip in `[ ... ]` brackets */
 .term-tag {
 	display: inline-block;

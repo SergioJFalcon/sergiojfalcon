@@ -1,6 +1,6 @@
 <script lang="ts">
-  import { resolve } from '$app/paths';
   import TermWindow from '$lib/components/TermWindow.svelte';
+  import TermPrompt from '$lib/components/TermPrompt.svelte';
 </script>
 
 <svelte:head>
@@ -36,19 +36,9 @@
           <span class="glow-amber text-(--term-amber)">Rock&nbsp;Climber</span>
         </p>
 
-        <p class="pt-2 text-(--term-muted)">
-          <span class="text-(--term-green)">$</span> ./enter <span class="cursor"></span>
-        </p>
-
-        <a
-          href={resolve('/about')}
-          target="_self"
-          class="group mt-1 inline-flex items-center gap-2 rounded-md border border-(--term-green-dim) bg-[rgba(86,156,214,0.06)] px-6 py-2.5 text-(--term-green) transition-all duration-150 hover:bg-[rgba(86,156,214,0.14)] hover:shadow-[0_0_22px_rgba(86,156,214,0.35)]"
-        >
-          <span class="text-(--term-muted) transition-colors group-hover:text-(--term-green)">[</span>
-          <span class="glow-green tracking-widest uppercase">enter</span>
-          <span class="text-(--term-muted) transition-colors group-hover:text-(--term-green)">]</span>
-        </a>
+        <div class="pt-2">
+          <TermPrompt />
+        </div>
       </div>
     </TermWindow>
   </div>
