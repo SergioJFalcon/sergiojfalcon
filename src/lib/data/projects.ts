@@ -26,7 +26,7 @@ export const portfolio: Project[] = [
   {
     name: 'ClimbTrainer',
     description:
-      'A climbing training app that generates personalized training programs tailored to the individual athlete. The program adapts dynamically as the climber progresses — or faces setbacks like injuries — keeping training effective and realistic at every stage.',
+      'A climbing training app that generates personalized training programs tailored to the individual athlete. The program adapts dynamically as the climber progresses or faces setbacks like injuries. Keeping training effective and realistic at every stage.',
     company: 'ClimbTrainer',
     logo: '',
     initials: 'CT',
@@ -48,7 +48,7 @@ export const portfolio: Project[] = [
   {
     name: 'AACT Web Application',
     description:
-      'Main internal web platform for Aisin factory operations, housing several integrated modules: a TPDA system that replaced a costly legacy application, a role-based inventory and checkout system managing 43,000+ items across multiple locations, a cleanroom sensor monitoring dashboard with real-time gauge displays, a tools budget performance tracker, and production analytics. Integrates with LIFX smart lights on the factory floor — machines send status requests to the application, which updates light states, fires production events, and tracks output counts. Includes a robust background notification service with scheduled delivery and automated retry.',
+      'Main internal web platform for Aisin factory operations, housing several integrated modules: a TPDA system that replaced a costly legacy application, a role-based inventory and checkout system managing 43,000+ items across multiple locations, a cleanroom sensor monitoring dashboard with real-time gauge displays, a tools budget performance tracker, and production analytics. Integrates a variety of smart lights such as LIFX on the factory floor machines send status requests to the application, which updates light states, fires production events, and tracks output counts. Includes a robust background notification service with scheduled delivery and automated retry.',
     company: 'Aisin',
     logo: '',
     initials: 'AACT',
