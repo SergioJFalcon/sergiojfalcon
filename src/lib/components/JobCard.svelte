@@ -32,7 +32,7 @@
       {work.title}
     </p>
     <div id="date-range" class="font-term text-right text-xs text-(--term-green-dim)">
-      <span>{work.startDate} — {work.endDate}</span>
+      <span>{work.startDate} - {work.endDate}</span>
     </div>
   </div>
 </div>

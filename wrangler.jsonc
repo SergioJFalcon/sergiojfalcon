@@ -8,6 +8,10 @@
 		"binding": "ASSETS",
 		"directory": ".svelte-kit/cloudflare"
 	},
+  // Email Sending binding — active in production/preview; stub (no sends) in local dev.
+	// The "from" domain (sergiojfalcon.com) must be onboarded first:
+	//   npx wrangler email sending enable sergiojfalcon.com
+	"send_email": [{ "name": "EMAIL", "remote": true }],
 	"workers_dev": true,
 	"preview_urls": true
 }
