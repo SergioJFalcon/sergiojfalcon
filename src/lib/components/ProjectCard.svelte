@@ -17,7 +17,15 @@
     links: ProjectLink[];
   };
 
-  let { project }: { project: Project } = $props();
+  let {
+    project,
+    ontagclick,
+    activeTechs
+  }: {
+    project: Project;
+    ontagclick?: (tech: string) => void;
+    activeTechs?: Set<string>;
+  } = $props();
 </script>
 
 <div class="group h-full">
@@ -45,10 +53,12 @@
           <div class="flex flex-wrap gap-1.5">
             {#each project.techstack as tech (tech)}
               {@const color = techColor(tech)}
-              <span
-                class="term-tag"
-                style="color: {color}; border-color: {color}40; background-color: {color}12"
-              >{tech}</span>
+              {@const active = activeTechs?.has(tech) ?? false}
+              <button
+                onclick={ontagclick ? () => ontagclick(tech) : undefined}
+                class="term-tag transition-all duration-150 {ontagclick ? 'cursor-pointer hover:brightness-125' : 'cursor-default'}"
+                style="color: {color}; border-color: {active ? color : `${color}40`}; background-color: {active ? `${color}22` : `${color}12`}"
+              >{tech}</button>
             {/each}
           </div>
         </div>
