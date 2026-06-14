@@ -8,7 +8,7 @@
 		"binding": "ASSETS",
 		"directory": ".svelte-kit/cloudflare"
 	},
-	// Email Sending binding — "remote: true" proxies sends to the real service during local dev.
+	// Email Sending binding — active in production/preview; stub (no sends) in local dev.
 	// The "from" domain (sergiojfalcon.com) must be onboarded first:
 	//   npx wrangler email sending enable sergiojfalcon.com
 	"send_email": [{ "name": "EMAIL", "remote": true }],

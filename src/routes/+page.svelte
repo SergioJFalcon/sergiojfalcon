@@ -11,7 +11,7 @@
 <div class="flex h-full w-full flex-col">
   <!-- Dimmed hero footage behind a deep gradient so terminal text stays legible -->
   <video autoplay loop muted playsinline class="fixed inset-0 -z-10 h-screen w-screen object-cover">
-    <!-- R2 public URL — replace with your bucket's public domain once uploaded -->
+    <!-- R2 public URL - replace with your bucket's public domain once uploaded -->
     <source src="https://pub-3a7425f9f682477db3d120f2aac9d510.r2.dev/heroVideo.mp4" type="video/mp4" />
   </video>
   <div

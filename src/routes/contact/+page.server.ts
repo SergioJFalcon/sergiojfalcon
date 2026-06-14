@@ -40,9 +40,8 @@ export const actions: Actions = {
     const form = await superValidate(request, zod4(contactSchema));
     if (!form.valid) return fail(400, { form });
 
-    // Honeypot tripped — pretend success so bots don't learn the field is a trap.
     if (form.data.company) {
-      return message(form, "Thanks! Your message has been sent — I'll get back to you soon.");
+      return message(form, "Thanks! Your message has been sent. I'll get back to you soon.");
     }
 
     const email = (platform?.env as { EMAIL?: EmailBinding } | undefined)?.EMAIL;
@@ -76,6 +75,6 @@ export const actions: Actions = {
       );
     }
 
-    return message(form, "Thanks! Your message has been sent — I'll get back to you soon.");
+    return message(form, "Thanks! Your message has been sent. I'll get back to you soon.");
   }
 };

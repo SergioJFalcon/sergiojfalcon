@@ -159,7 +159,7 @@
     await scrollToEnd();
   }
 
-  // ls click-throughs — clicking a folder/file behaves like typing the command.
+  // ls click-throughs - clicking a folder/file behaves like typing the command.
   function clickDir(dir: string) {
     navigate(`cd ${dir}`, dir);
   }

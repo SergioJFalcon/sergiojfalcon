@@ -345,7 +345,7 @@ button:focus:not(:focus-visible) {
 }
 
 /* =====================================================================
-   VS Code / Dev aesthetic — shared utilities
+   VS Code / Dev aesthetic - shared utilities
    ===================================================================== */
 
 .font-term {
@@ -372,7 +372,7 @@ button:focus:not(:focus-visible) {
 	font-family: var(--font-mono);
 }
 
-/* Blinking block cursor — add to a text node's end */
+/* Blinking block cursor - add to a text node's end */
 .cursor::after {
 	content: '▋';
 	margin-left: 0.1em;
