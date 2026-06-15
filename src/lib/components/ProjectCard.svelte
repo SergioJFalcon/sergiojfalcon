@@ -33,12 +33,19 @@
     class="h-full gap-4 border-(--term-border) bg-[rgba(30,30,30,0.85)] backdrop-blur-md transition-all duration-200 group-hover:border-(--term-green-dim) group-hover:shadow-[0_0_26px_rgba(86,156,214,0.16)]"
   >
     <Card.Header class="flex flex-row items-center gap-3">
-      <Avatar.Root class="h-11 w-11 rounded border border-(--term-border)">
+      <Avatar.Root class="h-11 w-11 shrink-0 rounded border border-(--term-border)">
         <Avatar.Image src={project.logo} alt={project.name} />
         <Avatar.Fallback>{project.initials}</Avatar.Fallback>
       </Avatar.Root>
-      <div class="font-term text-lg font-semibold text-(--term-green)">
-        <span class="text-(--term-muted)">~/</span>{project.name.trim()}
+      <div class="flex flex-col">
+        <div class="font-term text-lg font-semibold text-(--term-green)">
+          <span class="text-(--term-muted)">~/</span>{project.name.trim()}
+        </div>
+        {#if project.company}
+          <span class="font-term text-xs text-(--term-muted)">
+            // {project.company === 'Personal' ? 'personal project' : `@${project.company}`}
+          </span>
+        {/if}
       </div>
     </Card.Header>
     <Card.Content>

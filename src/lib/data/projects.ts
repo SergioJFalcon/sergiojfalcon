@@ -30,7 +30,7 @@ export const portfolio: Project[] = [
     company: 'ClimbTrainer',
     logo: '',
     initials: 'CT',
-    techstack: ['SvelteKit', 'Axum', 'TypeScript', 'Rust', 'PostgreSQL', 'Redis'],
+    techstack: ['SvelteKit', 'Axum', 'TypeScript', 'Rust', 'PostgreSQL', 'Redis', "TailwindCSS"],
     links: [{ name: 'climbtrainer.app', url: 'https://climbtrainer.app/' }],
     images: []
   },
@@ -41,18 +41,18 @@ export const portfolio: Project[] = [
     company: 'Aisin',
     logo: '',
     initials: 'DM',
-    techstack: ['Svelte', 'FastAPI', 'TypeScript', 'Python', 'SQLite', 'YOLOv12'],
+    techstack: ['Svelte', 'FastAPI', 'TypeScript', 'Python', 'SQLite', 'YOLOv12', "TailwindCSS"],
     links: [],
     images: []
   },
   {
-    name: 'AACT Web Application',
+    name: 'AACT Web App',
     description:
       'Main internal web platform for Aisin factory operations, housing several integrated modules: a TPDA system that replaced a costly legacy application, a role-based inventory and checkout system managing 43,000+ items across multiple locations, a cleanroom sensor monitoring dashboard with real-time gauge displays, a tools budget performance tracker, and production analytics. Integrates a variety of smart lights such as LIFX on the factory floor machines send status requests to the application, which updates light states, fires production events, and tracks output counts. Includes a robust background notification service with scheduled delivery and automated retry.',
     company: 'Aisin',
     logo: '',
     initials: 'AACT',
-    techstack: ['Vue', '.NET Core', 'TypeScript', 'MySQL', 'Quartz.NET'],
+    techstack: ['Vue', '.NET Core', 'TypeScript', 'MySQL', 'Quartz.NET', "Bootstrap5"],
     links: [],
     images: []
   },

@@ -50,7 +50,7 @@
       {/each}
     </div>
     <div class="font-term text-center text-xs text-(--term-muted)">
-      © 2024 Sergio Falcon
+      © 2026 Sergio Falcon
     </div>
   </div>
 </footer>
