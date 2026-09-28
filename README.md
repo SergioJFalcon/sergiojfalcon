@@ -48,15 +48,15 @@
 ### 📊 Weekly development breakdown ![GitHub last commit](https://img.shields.io/github/last-commit/sergiojfalcon/sergiojfalcon)
 
 ```txt
-Total Commits: 5 | Total Files Changed: 7
+Total Commits: 4 | Total Files Changed: 6
 ┌──────────┬──────────┬────────┐
 │ language │ Commit % │ File % │
 ├──────────┼──────────┼────────┤
-│      CSS │ 20.00%   │ 14.29% │
+│      CSS │ 25.00%   │ 16.67% │
 ├──────────┼──────────┼────────┤
-│     Rust │ 20.00%   │ 28.57% │
+│     Rust │ 25.00%   │ 33.33% │
 ├──────────┼──────────┼────────┤
-│    Other │ 60.00%   │ 57.14% │
+│    Other │ 50.00%   │ 50.00% │
 └──────────┴──────────┴────────┘
 ```
 
